@@ -1,22 +1,115 @@
-### AL ###
-#Template for AL projects for Dynamics 365 Business Central
-#launch.json folder
-.vscode/
-#Cache folder
-.alcache/
-#Symbols folder
-.alpackages/
-#Snapshots folder
-.snapshots/
-#Testing Output folder
-.output/
-#Extension App-file
-*.app
-#Rapid Application Development File
-rad.json
-#Translation Base-file
-*.g.xlf
-#License-file
-*.flf
-#Test results file
-TestResults.xml
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HaïtiVisionParyaj</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #001f3f;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background-color: #ffcc00;
+      color: #001f3f;
+      padding: 15px 25px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 20px 0;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .links a {
+      display: block;
+      color: #fff;
+      margin: 10px 0;
+      text-decoration: underline;
+    }
+
+    form {
+      margin-top: 30px;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      background-color: #ffcc00;
+      color: #001f3f;
+      padding: 10px 20px;font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://i.ibb.co/hRzXbWr/haitivision-logo.png" alt="HaïtiVisionParyaj Logo" class="logo" />
+
+  <h1>HAÏTIVISIONPARYAJ</h1>
+  <a href="#" class="btn">ANTRE NAN JWÈT LA</a>
+
+  <div class="links">
+    <a href="#">Enskri / Konekte</a>
+    <a href="#">Règ Jwèt yo</a>
+    <a href="#">Aktualite Espótiv</a>
+    <a href="#">Kontakte nou</a>
+  </div>
+
+  <form id="gameForm">
+    <h2>Jwe kounye a</h2>
+    <label for="number">Chwazi yon nimewo (0-99):</label><br>
+    <input type="number" id="number" name="number" min="0" max="99" required><br>
+    <label for="bet">Mete montan paryaj la (HTG):</label><br>
+    <input type="number" id="bet" name="bet" min="1" required><br>
+    <input type="submit" value="Jwe">
+  </form>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    document.getElementById('gameForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const number = parseInt(document.getElementById('number').value);
+      const bet = parseInt(document.getElementById('bet').value);const winningNumber = Math.floor(Math.random() * 100);
+      let message = '';
+      if (number === winningNumber) {
+        const winnings = bet * 50;
+        message = `🎉 Felisitasyon! Ou genyen! Nimewo genyen an se winningNumber. Ou ranpòte{winnings} HTG.`;
+      } else {
+        message = `😞 Dezole, nimewo genyen an se ${winningNumber}. Eseye ankò!`;
+      }
+      document.getElementById('result').textContent = message;
+    });
+  </script>
+
+</body>
+</html>
+```
